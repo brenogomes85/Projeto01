@@ -11,7 +11,7 @@ public class TreeViewConstructor {
 	
 	//Este método cria um ArrayList de TreeItems (categorias)
 	@SuppressWarnings("unchecked")
-	public ArrayList<TreeItem> getCategorias(Linha valor){
+	public ArrayList<TreeItem> getCategorias(String linha){
 		
 		ArrayList<TreeItem> categorias = new ArrayList<TreeItem>();
 		
@@ -35,12 +35,12 @@ public class TreeViewConstructor {
 		aresTHS.getChildren().addAll(getAresTHS());
 		aresTHS.setExpanded(true);
 		
-		if(valor.getLinha()=="Cronos") {
+		if(linha=="Cronos") {
 			categorias.add(cronosOld);
 			categorias.add(cronosL);
 			categorias.add(cronosNG);
 		}
-		if(valor.getLinha()=="Ares") {
+		if(linha=="Ares") {
 			categorias.add(aresTB);
 			categorias.add(aresTHS);
 		}
@@ -54,9 +54,9 @@ public class TreeViewConstructor {
 		
 		ArrayList<TreeItem> cronosOld = new ArrayList<TreeItem>();
 		
-		TreeItem cronosOld1 = new TreeItem("Cronos 6001-A");
-		TreeItem cronosOld2 = new TreeItem("Cronos 6003");
-		TreeItem cronosOld3 = new TreeItem("Cronos 7023");
+		TreeItem cronosOld1 = new TreeItem(CategoriaMedidores.CRONOS_OLD1);
+		TreeItem cronosOld2 = new TreeItem(CategoriaMedidores.CRONOS_OLD2);
+		TreeItem cronosOld3 = new TreeItem(CategoriaMedidores.CRONOS_OLD3);
 		
 		cronosOld.add(cronosOld1);
 		cronosOld.add(cronosOld2);
@@ -71,8 +71,8 @@ public class TreeViewConstructor {
 		
 		ArrayList<TreeItem> cronosL = new ArrayList<TreeItem>();
 		
-		TreeItem cronosL1 = new TreeItem("Cronos 6021L");
-		TreeItem cronosL2 = new TreeItem("Cronos 7023L");
+		TreeItem cronosL1 = new TreeItem(CategoriaMedidores.CRONOS_L1);
+		TreeItem cronosL2 = new TreeItem(CategoriaMedidores.CRONOS_L2);
 		
 		cronosL.add(cronosL1);
 		cronosL.add(cronosL2);
@@ -86,12 +86,12 @@ public class TreeViewConstructor {
 		
 		ArrayList<TreeItem> cronosNG = new ArrayList<TreeItem>();
 		
-		TreeItem cronosNG1 = new TreeItem("Cronos 6001-NG");
-		TreeItem cronosNG2 = new TreeItem("Cronos 6003-NG");
-		TreeItem cronosNG3 = new TreeItem("Cronos 6021-NG");
-		TreeItem cronosNG4 = new TreeItem("Cronos 6031-NG");
-		TreeItem cronosNG5 = new TreeItem("Cronos 7021-NG");
-		TreeItem cronosNG6 = new TreeItem("Cronos 7023-NG");
+		TreeItem cronosNG1 = new TreeItem(CategoriaMedidores.CRONOS_NG1);
+		TreeItem cronosNG2 = new TreeItem(CategoriaMedidores.CRONOS_NG2);
+		TreeItem cronosNG3 = new TreeItem(CategoriaMedidores.CRONOS_NG3);
+		TreeItem cronosNG4 = new TreeItem(CategoriaMedidores.CRONOS_NG4);
+		TreeItem cronosNG5 = new TreeItem(CategoriaMedidores.CRONOS_NG5);
+		TreeItem cronosNG6 = new TreeItem(CategoriaMedidores.CRONOS_NG6);
 		
 		cronosNG.add(cronosNG1);
 		cronosNG.add(cronosNG2);
@@ -109,9 +109,9 @@ public class TreeViewConstructor {
 		
 		ArrayList<TreeItem> aresTB = new ArrayList<TreeItem>();
 		
-		TreeItem aresTB1 = new TreeItem("Ares 7021");
-		TreeItem aresTB2 = new TreeItem("Ares 7031");
-		TreeItem aresTB3 = new TreeItem("Ares 7023");
+		TreeItem aresTB1 = new TreeItem(CategoriaMedidores.ARES_TB1);
+		TreeItem aresTB2 = new TreeItem(CategoriaMedidores.ARES_TB2);
+		TreeItem aresTB3 = new TreeItem(CategoriaMedidores.ARES_TB3);
 		
 		aresTB.add(aresTB1);
 		aresTB.add(aresTB2);
@@ -126,9 +126,9 @@ public class TreeViewConstructor {
 		
 		ArrayList<TreeItem> aresTHS = new ArrayList<TreeItem>();
 		
-		TreeItem aresTHS1 = new TreeItem("Ares 8023 15");
-		TreeItem aresTHS2 = new TreeItem("Ares 8023 200");
-		TreeItem aresTHS3 = new TreeItem("Ares 8023 2,5");
+		TreeItem aresTHS1 = new TreeItem(CategoriaMedidores.ARES_THS1);
+		TreeItem aresTHS2 = new TreeItem(CategoriaMedidores.ARES_THS2);
+		TreeItem aresTHS3 = new TreeItem(CategoriaMedidores.ARES_THS3);
 		
 		aresTHS.add(aresTHS1);
 		aresTHS.add(aresTHS2);
