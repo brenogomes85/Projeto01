@@ -51,7 +51,7 @@ public class WindowViewController {
     @FXML
     private void initialize() {
     	carregaLinhas();	
-    	modelo.setDisable(true); //Desabilita o titledPane 'modelo' no início
+    	modelo.setDisable(true); //Desabilita o titledPane 'modelo' no inÃ­cio
     	carregaTreeView();
 
     }
@@ -77,7 +77,7 @@ public class WindowViewController {
     public TreeView<String> carregaTreeView(){
     	 /* 
     	 * Verifica o valor selecionado no combobox e constroi a tree view
-    	 * de acordo com a opção escolhida.
+    	 * de acordo com a opÃ§Ã£o escolhida.
     	 */
     	comboBoxLinhas.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) ->{
     		//Recebe o valor selecionado no combobox
@@ -97,33 +97,55 @@ public class WindowViewController {
 	    			cronosOld.getChildren().add(new TreeItem<>(CategoriaMedidores.CRONOS_OLD2.getCategoria()));
 	    			cronosOld.getChildren().add(new TreeItem<>(CategoriaMedidores.CRONOS_OLD3.getCategoria()));
 	    		
-	    			/*TreeItem cronosL = new TreeItem(ModelosMedidores.CRONOS_L);
-	    			cronosL.getChildren().addAll(CategoriaMedidores.CRONOS_OLD1, CategoriaMedidores.CRONOS_OLD2,
-	    											CategoriaMedidores.CRONOS_OLD3);
-	    			
-	    			TreeItem cronosNG = new TreeItem(ModelosMedidores.CRONOS_NG);
-	    			cronosNG.getChildren().addAll(CategoriaMedidores.CRONOS_NG1, CategoriaMedidores.CRONOS_NG2,
-	    											CategoriaMedidores.CRONOS_NG3, CategoriaMedidores.CRONOS_NG4,
-	    											CategoriaMedidores.CRONOS_NG5, CategoriaMedidores.CRONOS_NG6);*/
+	    			TreeItem cronosL = new TreeItem<>(ModelosMedidores.CRONOS_L.getModelo());
+	    			cronosL.getChildren().add(new TreeItem<>(CategoriaMedidores.CRONOS_L1.getCategoria()));
+				cronosL.getChildren().add(new TreeItem<>(CategoriaMedidores.CRONOS_L2.getCategoria()));
+				
+	    			TreeItem cronosNG = new TreeItem<>(ModelosMedidores.CRONOS_NG.getModelo());
+	    			cronosNG.getChildren().add(new TreeItem<>(CategoriaMedidores.CRONOS_NG1.getCategoria()));
+				cronosNG.getChildren().add(new TreeItem<>(CategoriaMedidores.CRONOS_NG2.getCategoria()));
+				cronosNG.getChildren().add(new TreeItem<>(CategoriaMedidores.CRONOS_NG3.getCategoria()));
+				cronosNG.getChildren().add(new TreeItem<>(CategoriaMedidores.CRONOS_NG4.getCategoria()));
+				cronosNG.getChildren().add(new TreeItem<>(CategoriaMedidores.CRONOS_NG5.getCategoria()));
+				cronosNG.getChildren().add(new TreeItem<>(CategoriaMedidores.CRONOS_NG6.getCategoria()));
+					
 	    			cronosOld.setExpanded(true);
-	    			//cronosL.setExpanded(true);
-	    			//cronosNG.setExpanded(true);
+	    			cronosL.setExpanded(true);
+	    			cronosNG.setExpanded(true);
 	    			
 	    			categoria.add(cronosOld);
-	    			//categoria.add(cronosL);
-	    			//categoria.add(cronosNG);
+	    			categoria.add(cronosL);
+	    			categoria.add(cronosNG);
+				break;
+				
+			case "Ares":
+				TreeItem aresTB = new TreeItem<>(ModelosMedidores.ARES_TB.getModelo());
+				aresTB.getChildren().add(new TreeItem<>(CategoriaMedidores.ARES_TB1.getCategoria()));
+				aresTB.getChildren().add(new TreeItem<>(CategoriaMedidores.ARES_TB2.getCategoria()));
+				aresTB.getChildren().add(new TreeItem<>(CategoriaMedidores.ARES_TB3.getCategoria()));
+				
+				TreeItem aresTHS = new TreeItem<>(ModelosMedidores.ARES_THS.getModelo());
+				aresTHS.getChildren().add(new TreeItem<>(CategoriaMedidores.ARES_THS1.getCategoria()));
+				aresTHS.getChildren().add(new TreeItem<>(CategoriaMedidores.ARES_THS2.getCategoria()));
+				aresTHS.getChildren().add(new TreeItem<>(CategoriaMedidores.ARES_THS3.getCategoria()));
+				
+				aresTB.setExpanded(true);
+				aresTHS.setExpanded(true);
+				
+				categoria.add(aresTB);
+				categoria.add(aresTHS);
     		}
     		
     		//Adiciona filhas na raiz
         	raiz.getChildren().addAll(categoria);
         	
-        	//Seta o nó da raiz
+        	//Seta o nÃ³ da raiz
         	treeViewModelos.setRoot(raiz);
         	
         	//Oculta a raiz
         	treeViewModelos.setShowRoot(false);
         	
-        	//Ativa o titledPane após carregar a tree view
+        	//Ativa o titledPane apÃ³s carregar a tree view
         	modelo.setDisable(false);
     		
     	});
